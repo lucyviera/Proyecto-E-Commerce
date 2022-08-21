@@ -1,0 +1,12 @@
+.error{
+    border-color: red;
+}
+.field{
+    margin-bottom: 10px;
+}
+.home-pic{
+    max-width: 500px;
+    width: 100%;
+    display: block;
+    margin: auto;
+}

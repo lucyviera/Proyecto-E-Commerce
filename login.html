@@ -9,32 +9,45 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
   <style>
     body {
       background-color: rgb(248, 249, 250);
     }
   </style>
+  <script src="js/login.js"></script>
 </head>
 
 <body>
-  <main class="mt-5">
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
-    </div>
-  </main>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
-        2022</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
-  <script src="js/login.js"></script>
-</body>
+    <main class="container">
+        <img src="img/login.png" class="home-pic"> 
+        <div class="text-center">
+        <h1>Inicio de sesión</h1>
+        
+        <div class="field">
+            <label for="Email"><b>Email</b>
+            <input type="text" id="Email" placeholder="Ingresar Email" name="Email" class="form-control"></label><br>
+        </div> 
+        
+        <div class="field">
+            <label for="psw"><b>Contraseña</b>
+            <input type="password" id="psw" placeholder="Ingresar Contraseña" name="psw" class="form-control"></label><br><br>
+        </div>
+            
+        <button class="btn btn-primary" id="Inicio">Ingresar</button>
+        </div>
+    </main>
+
+    <footer class="text-muted">
+        <div class="container">
+        <p class="float-end">
+            <a href="#">Volver arriba</a>
+        </p>
+        <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
+            2022</p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+        </div>
+    </footer>
+    </body>
 
 </html>
