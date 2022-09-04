@@ -188,3 +188,18 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+/* LOGIN START */
+.button-user,
+.button-logout{
+  display: none;
+}
+
+.logged-in .button-user,
+.logged-in .button-logout{
+  display:block;
+}
+
+.logged-in .button-login{
+  display:none;
+}

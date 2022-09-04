@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 
-    //Alerta al hacer click a Cerrar Sesión 
+//Alerta al hacer click a Cerrar Sesión 
     document.getElementById("Cerrar").addEventListener("click", function() {
         alert ("Usted ha cerrado sesión");
     });

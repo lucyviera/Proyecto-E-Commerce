@@ -40,3 +40,18 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+//Metodo que corre cuando se carga la pagina, revisa si el usuario esta logueado
+function checkUserLoggedIn(){
+  //Variable de nombre de usuario si esta logueado
+  let username = localStorage.getItem('email')
+  // si hay un valor
+  if (username) {
+    //le agrega la clase logged-in, para mostrar los botones de NavBar
+    document.getElementsByTagName('body')[0].classList.add('logged-in')
+    //Setea el boton de usuario por el nombre de usuario
+    document.getElementById('user').innerHTML = username
+  }
+
+}
+checkUserLoggedIn()

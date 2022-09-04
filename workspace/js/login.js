@@ -14,8 +14,18 @@ function login (){
         document.getElementById('psw').classList.add('error');
         alert ("Por favor ingrese, nombre de usuario y contraseña");
     } else {
+        localStorage.setItem('email', email);
         location.href="index.html";
-    
     }
 }
+
+function logout(){
+    //borrar el localStorage de usaurio, para desloguear el usuario
+    localStorage.setItem('email', "");
+  
+}
+logout()
+
+
+
 
