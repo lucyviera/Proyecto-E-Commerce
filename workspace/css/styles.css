@@ -186,7 +186,7 @@ a.custom-card:hover {
 }
 
 .checked {
-  color: orange;
+  color: red;
 }
 
 /* LOGIN START */
@@ -203,3 +203,4 @@ a.custom-card:hover {
 .logged-in .button-login{
   display:none;
 }
+

@@ -30,25 +30,66 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item button-login"> 
+          <li class="nav-item button-login">
             <a class="nav-link" id="Inicio" href="login.html">Login </a>
-           </li>
-           <li class="nav-item button-user">
-             <a class="nav-link" id="user" href="">User name </a>
-           </li>
-           <li class="nav-item button-logout">
-             <a class="nav-link" id="Cerrar" href="login.html">Cerrar Sesión </a>
-           </li>
+          </li>
+          <li class="nav-item button-user">
+            <a class="nav-link" id="user" href="">User name </a>
+          </li>
+          <li class="nav-item button-logout">
+            <a class="nav-link" id="Cerrar" href="login.html">Cerrar Sesión </a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
+    <!--Div donde se cargara la informacion de los productos a mostrar-->
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div class="row">
+        <div class="list-group" id="Prod-info-list">
+        </div>
       </div>
     </div>
+    <!--Div para ingresar comentarios-->
+    <div class="col-sm-8 container">
+      <br> <br>
+      <h3>Comentarios</h3>
+      <div class="rounded-3 cont">
+        <ul class="list-group" id="Prod-comments-list">
+          <li class="list-group-item">
+          </li>
+        </ul>
+        <div class="rounded-3 cont">
+          <h4> Tú opinión nos importa: </h4>
+          <input type="text" placeholder="Ingrese su nombre.." id="nombre"><br>
+          <textarea placeholder="Ingrese su comentario.." id="comments"></textarea><br>
+        </div>
+      </div>
+      <!-- Seccion para puntuar los productos-->
+      Tu puntuación: <span id="calif"></span>
+      <br>
+      <select id="puntaje">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <br>
+      <button type="submit" id="comentar">Comentar</button>
+    </div>
+
+    <!-- Div Para el carousel
+<div class="carousel">
+  <button id="retroceder">Retroceder</button>
+  <div id="imagen"></div>
+  <button id="avanzar">Avanzar</button>
+</div>
+<div class="controles">
+  <button id="play">Play</button>
+  <button id="stop" disabled>Stop</button>
+</div> -->
   </main>
   <footer class="text-muted">
     <div class="container">

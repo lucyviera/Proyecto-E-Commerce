@@ -1,3 +1,8 @@
+//funcion para setear el id de la info de los productos para redireccionar 
+function setProdID(id) {
+    localStorage.setItem("ProdID", id);
+    window.location = "product-info.html"
+}
 
 //función que recibe un array con los datos, y los muestra en pantalla a través el uso del DOM
 function showProductsList(){
@@ -8,7 +13,7 @@ function showProductsList(){
         if (((minCost == undefined) || (minCost != undefined && parseInt(product.cost) >= minCost)) &&
         ((maxCost == undefined) || (maxCost != undefined && parseInt(product.cost) <= maxCost))){
             htmlContentToAppend += `
-            <div class="list-group-item list-group-item-action">
+            <div onclick="setProdID(`+ product.id +`)" class="list-group-item list-group-item-action cursor-active">
                 <div class="row">
                     <div class="col-3">
                         <img src="` + product.image + `" alt="product image" class="img-thumbnail">
@@ -98,7 +103,7 @@ function sortAndShowProducts(sortCriteria){
 
 document.addEventListener("DOMContentLoaded", ()=> {
     //Lee localStorage y guarda la variable catID 
-    let catID = localStorage.getItem('catID')
+    let catID = localStorage.getItem('catID');
     // si la variable existe
     if (catID){
         //Uso la base de la url y le agrego la variable
