@@ -33,12 +33,17 @@
           <li class="nav-item button-login"> 
             <a class="nav-link" id="Inicio" href="login.html">Login </a>
            </li>
-           <li class="nav-item button-user">
-             <a class="nav-link" id="user" href="">User name </a>
-           </li>
-           <li class="nav-item button-logout">
-             <a class="nav-link" id="Cerrar" href="login.html">Cerrar Sesión </a>
-           </li>
+           <div class="dropdown">
+            <button class="nav-link button-user btn btn-secondary dropdown-toggle" type="button" id="user" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></buttton>></buttton>User name</button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item nav-item button-logout" id="Cerrar" href="login.html">Cerrar Sesión</a></li>
+            </ul>
+          </div>
         </ul>
       </div>
     </div>

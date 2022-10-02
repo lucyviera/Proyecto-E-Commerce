@@ -12,7 +12,7 @@ function login (){
     if (email==="" || psw===""){
         document.getElementById('Email').classList.add('error');
         document.getElementById('psw').classList.add('error');
-        alert ("Por favor ingrese, nombre de usuario y contraseña");
+        alert("Por favor ingrese, nombre de usuario y contraseña");
     } else {
         localStorage.setItem('email', email);
         location.href="index.html";

@@ -193,6 +193,7 @@ a.custom-card:hover {
 .button-user,
 .button-logout{
   display: none;
+  
 }
 
 .logged-in .button-user,
@@ -203,4 +204,53 @@ a.custom-card:hover {
 .logged-in .button-login{
   display:none;
 }
+
+.logged-in .button-user{
+  background-color: rgba(65, 236, 117, 0.76);
+}
+#comentar{
+    text-decoration: none;
+    padding: 5px;
+    font-weight: 100;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 10px;
+    border: 2px solid #0016b0;
+    width: 20.3%;
+
+}
+.related-background {
+  margin:auto;
+  padding: 100px 100px;
+  border-radius: 20px;
+}
+
+#Prod-relacionado .cards {
+  border: rgb(143, 55, 143) solid 1px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 15px;
+}
+
+
+.related-text {
+  margin: 10px;
+  text-align: center;
+}
+
+#Prod-info-list .card{
+  border: rgb(143, 55, 143) solid 1px;
+  margin: 15px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 15px;
+  height:35%; 
+  width:33.3%;
+}
+
+
+
+
+
+
 

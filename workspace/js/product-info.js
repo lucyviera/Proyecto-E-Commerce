@@ -1,6 +1,7 @@
 //inicializar array 
 let ProductsInfoData = [];
 let ProductsComments = [];
+let related =[];
 
 //funcion que recibe un array con los datos, y los muestra en pantalla a través el uso del DOM
 function showInfoProductsList(ProductsInfoData) {
@@ -20,11 +21,10 @@ function showInfoProductsList(ProductsInfoData) {
                  <p><b>Cantidad de vendidos</b></p>
                  <p small> ${ProductsInfoData.soldCount} </p>
                  <p><b>Imagenes ilustrativas</b></p>
-            </div>
                  <div class="row"> 
                  ` + cargarImagenes(ProductsInfoData.images) + `
                  </div>
-        `
+            </div>`
 
     document.getElementById("Prod-info-list").innerHTML = htmlContentToAppend;
 
@@ -35,14 +35,41 @@ function cargarImagenes(lista) {
     let imagenes = ""
     for (let foto of lista) {
         imagenes += `
-                <div class="col-3" >
-                        <img src= ` + foto + ` class="img-thumbnail" >
+                
+                
+                <div class="card">
+                        <img src= ` + foto + ` class="img-thumbnail">
                 </div>`
 
     }
     return imagenes;
 }
 
+//funcion para mostrar imagenes relacionadas, imagen + nombre del producto 
+function showProductsRelated(productorelacionado) {
+    let htmlrelated = "";
+  
+    for (let i = 0; i < relatedProducts.length; i++) {
+      let productorelacionado = relatedProducts[i];
+  
+      htmlrelated += `
+            
+      <div onclick="setProdID(${productorelacionado.id})" class="cards col-3 cursor-active card">
+                <div class="card">
+                 <img src="${productorelacionado.image}" class="card-img-top">
+                </div>
+             <p class="related-text">${productorelacionado.name}</p>
+             </div>
+             </div>`
+  
+      document.getElementById("Prod-relacionado").innerHTML = htmlrelated;
+    }
+  }
+
+  function setProdID(id) {
+    localStorage.setItem("ProdID", id);
+    window.location = "product-info.html"
+}
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -55,6 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (resultObj.status === "ok") {
             ProductsInfoData = resultObj.data;
             showInfoProductsList(ProductsInfoData);
+            relatedProducts = resultObj.data.relatedProducts;
+
+            showProductsRelated(related);
         }
 
         //funcion para mostrar los comentarios, recibe un array con los datos, y los muestra en pantalla a través el uso del DOM
@@ -69,9 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 htmlContentToAppend += `
         
                 <li class="list-group-item"><b>
-                    <span> ${ProductsComments[i].user}</span></b>
-                    <span> - ${ProductsComments[i].dateTime} -</span>
-                    <span>
+                    <span class="fa fa-user"> ${ProductsComments[i].user}</span></b>&nbsp;
+                    <span class="fa fa-calendar"> ${ProductsComments[i].dateTime}</span>
                     <span class= "fa fa-heart ${ProductsComments[i].score >= 1 ? "checked" : ""}"></span>
                     <span class= "fa fa-heart ${ProductsComments[i].score >= 2 ? "checked" : ""}"></span>
                     <span class= "fa fa-heart ${ProductsComments[i].score >= 3 ? "checked" : ""}"></span>

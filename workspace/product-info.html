@@ -33,12 +33,17 @@
           <li class="nav-item button-login">
             <a class="nav-link" id="Inicio" href="login.html">Login </a>
           </li>
-          <li class="nav-item button-user">
-            <a class="nav-link" id="user" href="">User name </a>
-          </li>
-          <li class="nav-item button-logout">
-            <a class="nav-link" id="Cerrar" href="login.html">Cerrar Sesión </a>
-          </li>
+          <div class="dropdown">
+            <button class="nav-link button-user btn btn-secondary dropdown-toggle" type="button" id="user" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></buttton>></buttton>User name</button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item nav-item button-logout" id="Cerrar" href="login.html">Cerrar Sesión</a></li>
+            </ul>
+          </div>
         </ul>
       </div>
     </div>
@@ -61,14 +66,17 @@
           </li>
         </ul>
         <div class="rounded-3 cont">
-          <h4> Tú opinión nos importa: </h4>
-          <input type="text" placeholder="Ingrese su nombre.." id="nombre"><br>
-          <textarea placeholder="Ingrese su comentario.." id="comments"></textarea><br>
+          <br>
+          <h4>✉Tú opinión nos importa: </h4>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Ingrese su nombre.." id="nombre"><br>
+            <textarea class="form-control" placeholder="Ingrese su comentario.." id="comments"rows="3"></textarea>
+          </div>
         </div>
       </div>
       <!-- Seccion para puntuar los productos-->
-      Tu puntuación: <span id="calif"></span>
-      <br>
+      <span  id="calif"> Tu puntuación:</span>
+      
       <select id="puntaje">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -76,20 +84,12 @@
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <br>
-      <button type="submit" id="comentar">Comentar</button>
+      <button type="button" id="comentar">Comentar</button>
     </div>
-
-    <!-- Div Para el carousel
-<div class="carousel">
-  <button id="retroceder">Retroceder</button>
-  <div id="imagen"></div>
-  <button id="avanzar">Avanzar</button>
-</div>
-<div class="controles">
-  <button id="play">Play</button>
-  <button id="stop" disabled>Stop</button>
-</div> -->
+    <div class="row related-background">
+      <h4>Productos Relacionados</h4>
+      <div id="Prod-relacionado" class="list-group"></div>
+    </div>
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -113,5 +113,4 @@
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
 </body>
-
 </html>
