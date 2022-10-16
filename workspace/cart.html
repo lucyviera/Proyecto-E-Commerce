@@ -29,11 +29,13 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item button-login"> 
+          <li class="nav-item button-login">
             <a class="nav-link" id="Inicio" href="login.html">Login </a>
-           </li>
-           <div class="dropdown">
-            <button class="nav-link button-user btn btn-secondary dropdown-toggle" type="button" id="user" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></buttton>></buttton>User name</button>
+          </li>
+          <div class="dropdown">
+            <button class="nav-link button-user btn btn-secondary dropdown-toggle" type="button" id="user"
+              id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></buttton>></buttton>User
+              name</button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
               <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
@@ -48,12 +50,97 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <!--Cart - Pauta 1-->
+    <div class="container px-3 my-5 clearfix">
+      <div class="card">
+        <div class="panel-info panel-shadow">
+          <div class="card-header py-3">
+            <h2 class="centrado">Carrito de compras</h2>
+          </div>
+          <div class="panel-body">
+            <div class="table-responsive">
+              <table class="table table-bordered m-0">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Nombre</th>
+                    <th>Precio unitario</th>
+                    <th>Cantidad</th>
+                    <th>SubTotal</th>
+                  </tr>
+                </thead>
+                <tbody id="shoppingcart">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!--Cart Summary -->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="panel-info panel-shadow">
+            <div class="card-header py-3">
+              <h5 class="mb-0">Resumen de compra</h5>
+            </div>
+            <tr>
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                    Total compras
+                    <span id="totalcompras"></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                    Envio
+                    <span id="envio"></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                    <strong> Monto Total </strong>
+                    <strong><span id="total"></span></strong>
+                  </li>
+                </ul>
+              </div>
+          </div>
+        </div>
       </div>
     </div>
+    </div>
+    <!--Shipping - Pauta 2-->
+    <div class="container px-3 my-5 clearfix">
+      <div class="card">
+        <div class="panel-info panel-shadow">
+          <div class="card-header py-3">
+            <h5>Tipo de envío</h5>
+          </div>
+          <div class="card-body">
+            <input type="radio" id="Premium" value="envioPremium">
+            <label for="html">Premium de 2 a 5 días (15%)</label><br>
+            <input type="radio" id="Express" value="envioExpress">
+            <label for="css">Express de 5 a 8 días (7%)</label><br>
+            <input type="radio" id="standard" value="envioStandard">
+            <label for="javascript">Standard de 12 a 15 días (5%)</label>
+          </div>
+          <div class="card-header py-3">
+            <h5 class="mb-0">Dirección de envío</h5>
+          </div>
+          <div class="card-body">
+            <label for="calle">Calle:</label><br>
+            <input type="text" class="form-control" id="calle"> <br>
+
+
+            <label for="número">Número:</label><br>
+            <input type="text" class="form-control" id="número"><br>
+
+            <label for="esquina">Esquina:</label><br>
+            <input type="text" class="form-control" id="esquina">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
   </main>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
