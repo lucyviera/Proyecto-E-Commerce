@@ -50,34 +50,182 @@
     </div>
   </nav>
   <main>
-    <!--Cart - Pauta 1-->
-    <div class="container px-3 my-5 clearfix">
+    <!--Cart-->
+    <br>
+    <div class="row">
+      <div class="col text-end">
+        <div class="btn-group btn-group-toggle mb-4">
+          <a href="categories.html"><button type="button" class="btn btn-primary">Continuar comprando</button></a> <br>
+        </div>
+      </div>
+    </div>
+    <div class="container px-3 my-5 clearfix justify-content-end">
       <div class="card">
         <div class="panel-info panel-shadow">
           <div class="card-header py-3">
-            <h2 class="centrado">Carrito de compras</h2>
+            <h1 class="centrado">🛒Carrito de compras</h1>
           </div>
           <div class="panel-body">
             <div class="table-responsive">
-              <table class="table table-bordered m-0">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>Nombre</th>
-                    <th>Precio unitario</th>
-                    <th>Cantidad</th>
-                    <th>SubTotal</th>
-                  </tr>
-                </thead>
-                <tbody id="shoppingcart">
-                </tbody>
-              </table>
+              <form class="needs-validation" id="formulario" novalidate>
+                <table class="table table-bordered m-0">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Nombre</th>
+                      <th>Precio unitario</th>
+                      <th>Cantidad</th>
+                      <th>SubTotal</th>
+                    </tr>
+                  </thead>
+                  <tbody id="shoppingcart">
+                  </tbody>
+                </table>
             </div>
           </div>
         </div>
       </div>
       <br>
-      <!--Cart Summary -->
+      <!--Shipping-->
+      <div method="post" class="container px-3 my-5 clearfix needs-validation" novalidate>
+        <div class="card">
+          <div class="panel-info panel-shadow">
+            <div class="card-header py-3">
+              <h5>Tipo de envío</h5>
+            </div>
+            <div class="card-body">
+              <input type="radio" name="porc" id="premium" value="envioPremium" required="">
+              <label for="html">Envío premium(15%)</label><br>
+              <input type="radio" name="porc" id="express" value="envioExpress" required="">
+              <label for="css">Envío express(7%)</label><br>
+              <input type="radio" name="porc" id="standard" value="envioStandard" required="">
+              <label for="javascript">Envío Estandar (5%)</label>
+              <div class="invalid-feedback">
+                Debe seleccionar un método de envio.
+              </div>
+            </div>
+            <div class="card-header py-3">
+              <h5 id="direccion" class="mb-0">Dirección de envío</h5>
+            </div>
+            <div class="card-body">
+              <label for="calle">Calle:</label><br>
+              <input type="text" class="form-control" id="calle" required> <br>
+              <div class="invalid-feedback">
+                Debe ingresar su calle
+              </div>
+              <label for="numero">Número:</label><br>
+              <input type="number"  class="form-control" id="numero" required><br>
+              <div class="invalid-feedback">
+                Ingresa un número
+              </div>
+              <label for="esquina">Esquina:</label><br>
+              <input type="text" class="form-control" id="esquina" required>
+              <div class="invalid-feedback">
+                Debe ingresar su esquina
+              </div>
+
+              <div class="card-header py-3">
+                <h5>Forma de pago</h5>
+              </div>
+            </div>
+
+
+
+            <!-- Botón que muestra la ventana modal-->
+            <span class="text-muted fa fa-credit-card" id="seleccion">No ha seleccionado</span>
+            <span><button type="button" class="btn btn-primary" href="" data-bs-toggle="modal" id="selectPayments"
+                data-bs-target="#staticBackdrop">Seleccionar</button></span>
+                <div class="invalid-feedback">
+                  Debe seleccionar un metodo de pago.
+                </div><br>
+                <span class= "text-danger" id="mediodepagodevalidacion"></span>
+            <!-- Ventana Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+              aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Forma de pago</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <input id="card" name="pagobutton" type="radio">
+                      <label for="card">Tarjeta de crédito o débito</label>
+                      <hr>
+                      <div name="kabom">
+                        <div class="row">
+                          <div class="col-6">
+                            <span class="text-muted">Número de tarjeta</span>
+                            <input class="form-control" type="number" placeholder="" min="0" id="numtarjeta">
+                          </div>
+                          <div class="col-6">
+                            <span class="text-muted">Código de seg.</span>
+                            <input class="form-control" type="number" placeholder="" id="codigoseg" min="0" style="width: 60%;">
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <span class="text-muted ">Vencimiento (MM/AA)</span>
+                          <div class="col-4 ">
+                            <select class="form-control" id="vtocardmes" style="width: 100%;">
+                              <option value="" selected></option>
+                              <option value="01">Enero</option>
+                              <option value="02">Febrero </option>
+                              <option value="03">Marzo</option>
+                              <option value="04">Abril</option>
+                              <option value="05">Mayo</option>
+                              <option value="06">Junio</option>
+                              <option value="07">Julio</option>
+                              <option value="08">Agosto</option>
+                              <option value="09">Setiembre</option>
+                              <option value="10">Octubre</option>
+                              <option value="11">Noviembre</option>
+                              <option value="12">Diciembre</option>
+                            </select>
+                          </div>
+                          <select class="form-control" id="vtocardanio" style="width: 13%;" disabled>
+                            <option value="" selected></option>
+                            <option value="16"> 2022</option>
+                            <option value="17"> 2023</option>
+                            <option value="18"> 2024</option>
+                            <option value="19"> 2025</option>
+                            <option value="20"> 2026</option>
+                            <option value="21"> 2027</option>
+                            <option value="22"> 2028</option>
+                            <option value="23"> 2029</option>
+                            <option value="24"> 2030</option>
+                          </select>
+                        </div>
+                      </div>
+                      <br>
+                      <input id="bank" type="radio" name="pagobutton" >
+                      <label for="bank">Transferencia bancaria</label>
+                      <hr>
+                        <div class="col-6">
+                          <span class="text-muted">Número de cuenta</span>
+                          <input class="form-control" disabled type="number" placeholder="" min="0"
+                            id="cuentatransferencia">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                      id="confirmarmetododepago">Confirmar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+   </div>
+ </div>
+</div>
+
+    <!--Cart Summary -->
+    <div class="container px-3 my-5 clearfix">
       <div class="col-md-4">
         <div class="card mb-4">
           <div class="panel-info panel-shadow">
@@ -104,43 +252,12 @@
           </div>
         </div>
       </div>
-    </div>
-    </div>
-    <!--Shipping - Pauta 2-->
-    <div class="container px-3 my-5 clearfix">
-      <div class="card">
-        <div class="panel-info panel-shadow">
-          <div class="card-header py-3">
-            <h5>Tipo de envío</h5>
-          </div>
-          <div class="card-body">
-            <input type="radio" id="Premium" value="envioPremium">
-            <label for="html">Premium de 2 a 5 días (15%)</label><br>
-            <input type="radio" id="Express" value="envioExpress">
-            <label for="css">Express de 5 a 8 días (7%)</label><br>
-            <input type="radio" id="standard" value="envioStandard">
-            <label for="javascript">Standard de 12 a 15 días (5%)</label>
-          </div>
-          <div class="card-header py-3">
-            <h5 class="mb-0">Dirección de envío</h5>
-          </div>
-          <div class="card-body">
-            <label for="calle">Calle:</label><br>
-            <input type="text" class="form-control" id="calle"> <br>
-
-
-            <label for="número">Número:</label><br>
-            <input type="text" class="form-control" id="número"><br>
-
-            <label for="esquina">Esquina:</label><br>
-            <input type="text" class="form-control" id="esquina">
-          </div>
-        </div>
+      <div class="centrado justify-content-end">
+        <button type="button" class="btn-lg btn btn-primary btn-success" id="finalizarcompra">Finalizar compra</button>
       </div>
     </div>
-    </div>
+    </form>
   </main>
-
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
@@ -162,6 +279,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>
