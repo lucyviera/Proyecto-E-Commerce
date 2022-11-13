@@ -7,7 +7,10 @@
   <title>eMercado - Todo lo que busques está aquí</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -44,11 +47,13 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item button-login"> 
+          <li class="nav-item button-login">
             <a class="nav-link" id="Inicio" href="login.html">Login </a>
-           </li>
-           <div class="dropdown">
-            <button class="nav-link button-user btn btn-secondary dropdown-toggle" type="button" id="user" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></buttton>></buttton>User name</button>
+          </li>
+          <div class="dropdown">
+            <button class="nav-link button-user btn btn-secondary dropdown-toggle" type="button" id="user"
+              id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></buttton>></buttton>User
+              name</button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
               <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
@@ -56,17 +61,78 @@
                 <hr class="dropdown-divider">
               </li>
               <li><a class="dropdown-item nav-item button-logout" id="Cerrar" href="login.html">Cerrar Sesión</a></li>
-        </ul>
+            </ul>
+          </div>
       </div>
-    </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    
+    <div class="container rounded bg-white mt-5 mb-5">
+      <div class="row">
+        <div class="card col-md-3 border-right">
+          <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+            <img class="rounded-circle mt-5" src="img/img_perfil.png" id="profilephoto" alt="avatar"><br>
+            <label for="inputprofilephoto"></label>
+            <input type="file" class="form-control text-center center-block file-upload" name="inputprofilephoto"
+              id="inputprofilephoto" accept="image/png, image/jpg, image/jpeg">
+          </div>
+        </div>
+        <div class="col-md-5 border-right">
+          <div class="p-3 py-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h2 class="text-right">Mi perfil</h2>
+            </div>
+            <form action="#" method="get" class="row mt-4 needs-validation" id="form" novalidate>
+              <div class="row mt-2">
+                <div class="col-md-6">
+                  <label for="firstname">Nombre*</label>
+                  <input type="text" class="form-control" id="firstname"  placeholder="" name="firstname" required>
+                
+                <div class="invalid-feedback">
+                  Debe ingresar nombre
+                </div>
+              </div>
+                <div class="col-md-6">
+                  <label for="lastname">Apellido*</label>
+                  <input id="lastname" class="form-control" type="text" name="lastname" required>
+                  <div class="invalid-feedback">
+                   Debe ingresar apellido
+                  </div>
+                </div>
+                <div class="row mt-2">
+                  <div class="col-md-6">
+                    <label for="secondname">Segundo nombre</label>
+                    <input type="text" class="form-control" id="secondname" name="secondname">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="secondLastname">Segundo apellido</label>
+                    <input id="secondlastname" class="form-control" type="text" name="secondlastname">
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-12">
+                  <label for="email">E-mail*</label>
+                  <input id="email"  class="form-control" type="email" name="email" disabled>
+                  <div id="invalidemail" class="invalid-feedback">
+                    Formato de e-mail incorrecto
+                  </div>
+                </div>
+                <div class="col-md-12 ">
+                  <label for="phonenumber">Telefono de contacto</label>
+                  <input class="form-control"  type="number" name="phonenumber" id="phonenumber"><br>
+                </div><br>
+              
+          </div>
+          <div class="col-12 mt-12">
+            <button type="submit" class="btn btn-success" id="buttonguardar">Guardar cambios</button>
+          </div>
+        </div>
+        </div>
       </div>
     </div>
-  </main>
+</form>      
+</main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">

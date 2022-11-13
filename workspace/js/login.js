@@ -20,8 +20,10 @@ function login (){
 }
 
 function logout(){
-    //borrar el localStorage de usaurio, para desloguear el usuario
+    //borrar el localStorage de usuario, para desloguear el usuario
     localStorage.setItem('email', "");
+    //borrar datos de los campos de perfil al desloguear el usuario -Entrega 7
+    localStorage.removeItem('datos', "")
   
 }
 logout()
