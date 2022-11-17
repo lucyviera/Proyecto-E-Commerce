@@ -1,3 +1,5 @@
+
+productos = [];
 //funcion para setear el id de la info de los productos para redireccionar 
 function setProdID(id) {
     localStorage.setItem("ProdID", id);
@@ -97,6 +99,21 @@ function sortAndShowProducts(sortCriteria){
     showProductsList();
 }
 
+//Función barra de buscar productos-Desafiate
+/*function buscar(products) {
+    let busqueda = document.getElementById('navBar').value;
+    
+
+    let product =products.filter(producto => {
+        return (producto.name.toLowerCase().indexOf(busqueda.toLowerCase()) >-1) || (producto.description.toLowerCase().indexOf(busqueda.toLowerCase()) >-1); 
+    })
+    
+
+    showProductsList(product);
+
+}*/
+
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -127,6 +144,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
     document.getElementById("sortByCount").addEventListener("click", function(){
         sortAndShowProducts(ORDER_BY_RELEVANCE);
     });
+    document.getElementById("navBar").addEventListener("keyup", function(){
+            buscar(currentProductsArray);
+            
+    })
+
     //Agrega un evento click a un elemento que limpia los filtros
     document.getElementById("clearRangeFilter").addEventListener("click", function(){
         document.getElementById("rangeFilterCountMin").value = "";
@@ -160,4 +182,5 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
         showProductsList();
     });
+
 });
